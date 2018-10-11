@@ -1,11 +1,15 @@
 package guru.springframework.api.domain;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExpirationDate implements Serializable {
+    private static final long serialVersionUID = 4298425978010904001L;
     private String date;
     private String timezone;
-    private Integer timezone_type;
+    private Integer timezoneType;
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     public String getDate() {
         return date;
@@ -23,11 +27,19 @@ public class ExpirationDate implements Serializable {
         this.timezone = timezone;
     }
 
-    public Integer getTimezone_type() {
-        return timezone_type;
+    public Integer getTimezoneType() {
+        return timezoneType;
     }
 
-    public void setTimezone_type(Integer timezone_type) {
-        this.timezone_type = timezone_type;
+    public void setTimezoneType(Integer timezoneType) {
+        this.timezoneType = timezoneType;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
     }
 }

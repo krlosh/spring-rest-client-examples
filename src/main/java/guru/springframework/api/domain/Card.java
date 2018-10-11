@@ -1,14 +1,17 @@
 package guru.springframework.api.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Card implements Serializable {
+    private static final long serialVersionUID = -4053243239352774528L;
     private String type;//Better use an enum
     private String number;
-    private ExpirationDate expiration_date;
+    private ExpirationDate expirationDate;
     private String iban;
     private String swift;
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     public String getType() {
         return type;
@@ -26,12 +29,12 @@ public class Card implements Serializable {
         this.number = number;
     }
 
-    public ExpirationDate getExpiration_date() {
-        return expiration_date;
+    public ExpirationDate getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setExpiration_date(ExpirationDate expiration_date) {
-        this.expiration_date = expiration_date;
+    public void setExpirationDate(ExpirationDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public String getIban() {
@@ -48,5 +51,13 @@ public class Card implements Serializable {
 
     public void setSwift(String swift) {
         this.swift = swift;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
     }
 }
